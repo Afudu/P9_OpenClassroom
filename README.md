@@ -69,9 +69,12 @@ The following commands rely on the knowledge of how to use the terminal (Unix, m
  * Unix/macOS/Windows: pip install -r requirements.txt
 
 # Running the application
+
 In the terminal (Unix, macOS) or command line (Windows):
+
 **1- Move to the LITReview folder**
   * cd LITReview
+
 **2 - Start the server**
   * python manage.py runserver
 
