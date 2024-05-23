@@ -40,7 +40,7 @@ The following commands rely on the knowledge of how to use the terminal (Unix, m
 
 **1 - Get the code**
 
-  * $ git clone https://github.com/Afudu/P7_OpenClassroom.git
+  * $ git clone https://github.com/Afudu/P9_OpenClassroom.git
 
 **2 - Move to the folder**
 
