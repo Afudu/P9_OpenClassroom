@@ -1,0 +1,21 @@
+    <section class="ticket">
+        {% if post.ticket_status == 'tickets_not_reviewed' %}
+        <div class="card p-3 mb-4">
+
+            <div>{% if  post.user.id == user.id%} You {% else %}
+                {{ post.user.username }} {% endif %} requested a review</div>
+            <div>{{ post.time_created }}</div>
+
+            <h3 class="ticket-title">Title: {{ post.title }}</h3>
+            <p class="ticket-description">Description: {{ post.description }}</p>
+            {% if post.image %}
+                <img class="ticket-image" src="{{ post.image.url }}">
+            {% endif %}
+             {% if not post.ticket %}
+            <a class="btn btn-outline-dark w-150 mt-3"
+                           href="{% url 'create_existing_ticket_review' existing_ticket_id=post.pk %}">Add a Review</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </section>
+

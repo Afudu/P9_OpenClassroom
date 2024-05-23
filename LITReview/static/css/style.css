@@ -1,0 +1,124 @@
+body {
+  padding-top: 56px;
+  background: #EBE7DE;
+}
+
+.bg-navy {
+    background-color: #2E3645;
+}
+
+.bg-dark {
+    background-color: #343a40!important;
+}
+
+.ml-auto{
+    margin-left: auto!important;
+}
+
+.form-signin {
+  width: 50%;
+  max-width: 350px;
+}
+.p-15{
+padding: 15px;
+}
+.form-signup {
+  width: 70%;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signout {
+ width: 50%;
+ max-width: 350px;
+}
+
+/*
+.container-md {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+*/
+
+.separator {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    border-left: solid 1px #ccc;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: white;
+    margin: 0 20px 0 20px;
+	transform: translate(0px,15px);
+}
+
+.subscribe {
+  border: solid 1px black;
+}
+
+.subscribe>form {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5%;
+}
+
+
+.subscribe>form>button {
+  background-color: rgb(247, 241, 232);
+  border-color: grey;
+  padding: 5px 5px;
+  margin-left:15px;
+  border-style: inset;
+  text-align: center;
+  text-decoration: none;
+  /*font-size: small;
+  font-variant-caps: small-caps;*/
+}
+
+#id_followed_user {
+    width: 90%;
+}
+
+
+.ticket-image {
+    max-width: 30%;
+    min-width: 150px;
+    max-height: 300px;
+    margin: 15px 3px 5px 3px;
+    border-radius: 5px;
+}
+
+
+/* display */
+.display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display-grid {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bg-red{
+	background-color:red;
+}
+.bg-blue{
+	background-color:blue;
+}
+
+/* media queries */
+
+/* Laptop / Desktop */
+@media (max-width:991.98px){
+  .separator{transform: rotate(-90deg) translateX(-8px)!important;border-color:#fff!important;color:#fff}
+  }
+
+ .w-150{
+ width: 150px;}
+
+ .w-100{
+ width: 100px;}

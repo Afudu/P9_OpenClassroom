@@ -1,0 +1,61 @@
+{% load static %}
+
+<html lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="APDS">
+  <title> LITReview</title>
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <!-- Font Awesome CSS -->
+   <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+ <!--  Bootstrap core CSS --> 
+  <link href=" {% static 'vendor/bootstrap/v5/css/bootstrap.min.css' %}" rel="stylesheet">
+  
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+ <body class="d-flex flex-column h-100">
+
+	 <!-- Navbar-->
+	 {% include 'navbar.html' %}
+	 
+	  <!-- Page Content -->
+	<main class="flex-shrink-0">
+		<div class="container-md">
+
+            {% if messages %}
+            {% for message in messages %}
+                  <div class="alert
+                  {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} alert-danger
+                  {% else %} alert-success {% endif %} alert-dismissible fade show mt-5" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+           {% endfor %}
+           {% endif %}
+
+			{% block content %}
+			{% endblock content %}
+		</div>
+	</main>
+	  <!-- /.container -->
+	  
+	 <footer class="footer mt-auto py-2 bg-dark">
+	  <div class="container">
+		<!-- <p class=" m-0 float-end"><a href="#">Back to top</a></p> -->
+		<p class="m-0 text-center small text-white text-muted">Copyright &copy; Songhay.Org {% now "Y" %}</p>
+	  </div>
+	</footer>
+
+ <!-- Bootstrap core JavaScript -->
+	  <script src=" {% static 'vendor/jquery/jquery.min.js' %}"></script>
+	  <script src="{% static 'vendor/bootstrap/v5/js/bootstrap.bundle.min.js'%}"></script>
+
+</body>
+
+</html>

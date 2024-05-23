@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="">Update your ticket</h2>
+<section class="card p-15 mt-3 mb-2">
+    <div class=" m-auto">
+        <p>You are updating the request for review:</p>
+
+        <form method="POST" action="{% url 'ticket_update' ticket.pk %}" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="m-auto">
+                <p>Title : {{ form.title }}</p>
+                <p>Description : {{ form.description }}</p>
+                {% if ticket.image %}
+                    <img class="ticket-image" src="{{ ticket.image.url }}">
+                {% endif %}
+                <p>Replace image: {{ form.image }}</p>
+                <div>
+                    <button type="submit" class="btn btn-outline-dark w-150" >Update Ticket</button>
+                    <a class="btn btn-outline-dark float-end w-150" href="{% url 'posts' %}" role="button">Cancel</a>
+                </div>
+            </div>
+         </form>
+    </div>
+
+</section>
+{% endblock content %}

@@ -6,14 +6,16 @@ __pycache__/
 
 
 # Project
-*.png
-*.jpg
-*.jpeg
+#*.png
+#*.jpg
+#*.jpeg
 *.zip
-env_P9/
-old/
+OLD_Data/
 Tests/
 Notes/
+LITReview_V1
+LITReview_V2
+LITReview_V3
 # Translations
 *.mo
 *.pot
@@ -37,8 +39,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-env_P4/
-
+env_P9/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

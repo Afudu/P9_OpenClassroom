@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mt-2">Follow a User</h3>
+<div class="subscribe mb-3 p-3">
+  <form method="POST" action="{% url 'user_follow' %}">
+    {% csrf_token %}
+    {{ user_follow_form.followed_user }}
+    <button type="submit" class="btn btn-outline-dark w-150">Follow</button>
+  </form>
+</div>
+
+  <h3>You are following</h3>
+  {% if user_following_list %}
+    <div class="subscribe mb-3">
+      {% for user_following in user_following_list %}
+        <div class="display-flex p-3">
+          {{ user_following.followed_user.username }}
+          <form method="POST" action="{% url 'user_unfollow' user_following.followed_user.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-dark w-150 mt-3">Unfollow</button>
+          </form>
+
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>You are not following anyone.</p>
+  {% endif %}
+
+
+<h3>You are followed by</h3>
+  {% if user_followers_list %}
+    <div class="subscribe mb-3">
+      {% for user_follower in user_followers_list %}
+        <div class="display-flex border p-3">
+          {{ user_follower.user.username }}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>You are not followed by anyone.</p>
+  {% endif %}
+
+{% endblock %}

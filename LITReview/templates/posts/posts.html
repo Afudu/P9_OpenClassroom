@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="card mt-3 mb-2 text-center p-2">Your Posts</h2>
+
+{% if own_posts %}
+     {% for post in own_posts %}
+        {% if post.content_type == 'TICKET' %}
+            {% include 'posts/posted_tickets_snippet.html' %}
+         {% elif post.content_type == 'REVIEW' %}
+            {% include 'posts/posted_reviews_snippet.html' %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+
+    <!-- No posts to display -->
+    <div class="card text-center mt-3">
+      <div class="card-body">
+          <p class="card-text">You have currently no posts. </p>
+      </div>
+    </div>
+{% endif %}
+
+{% endblock content %}

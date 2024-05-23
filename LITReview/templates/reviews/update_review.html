@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 style="">Update your review</h2>
+    <section class="update_review card p-15 m-auto mb-5">
+
+        <p>You are updating the review of the request:</p>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+               <section class="ticket card p-15 m-auto mb-5">
+                   <h3 class="">{{ review.ticket.title }}</h3>
+                   <p class="">{{ review.ticket.description }}</p>
+                    <div>Requested by: {% if  existing_ticket.user.id == user.id%} You {% else %}
+                        {{review.ticket.user.username}} {% endif %}</div>
+                    <div>Date: {{review.ticket.time_created}}</div>
+                    {% if review.ticket.image %}
+                    <img class="ticket-image" src="{{ review.ticket.image.url }}">
+                   {% endif %}
+                </section>
+                <div class="form">
+                    {{ form.as_p }}
+                    <input class= "btn btn-outline-dark w-150" type="submit" value="Update">
+                    <a class="btn btn-outline-dark float-end w-150" href="{% url 'posts' %}" role="button">Cancel</a>
+                </div>
+        </form>
+    </section>
+{% endblock content %}

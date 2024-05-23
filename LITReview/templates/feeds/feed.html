@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="d-flex justify-content-between py-4">
+  <a class="btn btn-outline-dark w-150" href="{% url 'ticket_create' %}" role="button">Request a Review</a>
+  <a class="btn btn-outline-dark w-150" href="{% url 'review_and_ticket_create' %}" role="button">Post a Review</a>
+</div>
+
+
+{% if posts %}
+
+  {% for post in posts %}
+
+    {% if post.content_type == 'TICKET' %}
+      {% include 'tickets/ticket_snippet.html' %}
+
+    {% elif post.content_type == 'REVIEW' %}
+      {% include 'reviews/review_snippet.html' %}
+
+    {% endif %}
+
+  {% endfor %}
+
+{% else %}
+
+<!-- No posts to display -->
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Your Tickets and Reviews and those of users you are following</h5>
+      <p class="card-text">
+        You have currently no posts. </p>
+  </div>
+</div>
+
+{% endif %}
+
+{% endblock content %}

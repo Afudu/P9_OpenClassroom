@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="m-3">Create a review</h2>
+    <section class="create_review card p-15 m-auto mb-5">
+    <p>You are creating a review in response to the request:</p>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <section class="ticket card p-15 m-auto mb-5">
+                <h3 class="ticket_title">Title: {{ existing_ticket.title }}</h3>
+                <div class="ticket_description">Description: {{ existing_ticket.description }}</div>
+                <div>Requested by: {% if  existing_ticket.user.id == user.id%} You {% else %}
+                        {{ existing_ticket.user.username }} {% endif %} </div>
+                    <div>Date: {{ existing_ticket.time_created }}</div>
+                {% if existing_ticket.image %}
+                    <img class="ticket-image" src="{{ existing_ticket.image.url }}">
+                {% endif %}
+            </section>
+            <div class="forms">
+                {{ existing_ticket_review_form.as_p }}
+                <input class= "btn btn-outline-dark w-150" type="submit" value="Submit">
+                <a class="btn btn-outline-dark float-end w-150" href="{% url 'feed' %}" role="button">Cancel</a>
+            </div>
+        </form>
+    </section>
+
+{% endblock content%}

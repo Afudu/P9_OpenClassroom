@@ -1,0 +1,21 @@
+
+
+<section class="ticket ">
+     {% if post.ticket_status == 'own_tickets_not_reviewed' %}
+        <div class="card p-3 m-auto mt-4 mb-4">
+            <div> You requested a review</div>
+            <div>{{ post.time_created }}</div>
+
+            <h3 class="ticket-title">Title: {{ post.title }}</h3>
+            <p class="ticket-description">Description: {{ post.description }}</p>
+            {% if post.image %}
+                <img class="ticket-image" src="{{ post.image.url }}">
+            {% endif %}
+            <div>
+            <a class="btn btn-outline-dark w-150 mt-3" href="{% url 'ticket_update' post.pk %}">Edit</a>
+            <a class="btn btn-outline-dark float-end w-150 mt-3" href="{% url 'ticket_delete' post.pk %}">Delete</a>
+            </div>
+        </div>
+    {% endif %}
+</section>
+

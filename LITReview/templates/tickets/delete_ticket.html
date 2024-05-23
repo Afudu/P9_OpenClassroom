@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="card p-15 mt-3 mb-2">
+    <div class=" m-auto">
+        <h2 class="">Delete a ticket</h2>
+        <p>Are you sure you want to delete the ticket "{{ ticket.title }}"?</p>
+
+        <form method="post" action="{% url 'ticket_delete' ticket.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-outline-dark  w-150" >Delete Ticket</button>
+                <a class="btn btn-outline-dark float-end w-150" href="{% url 'posts' %}" role="button">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+{% endblock content %}

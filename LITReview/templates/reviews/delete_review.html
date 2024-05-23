@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card p-15 mt-3 mb-2">
+    <div class="m-auto">
+        <h2 class="">Delete a Review</h2>
+
+        <p>Delete the review : {{ review.headline }}?</p>
+
+        <form method="POST" action="{% url 'review_delete' review.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mt-4 d-flex justify-content-between">
+                <button type="submit" class="btn btn-outline-dark  w-150" >Delete Review</button>
+                <a class="btn btn-outline-dark float-end w-150" href="{% url 'posts' %}" role="button">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
