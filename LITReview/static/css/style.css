@@ -15,6 +15,14 @@ body {
     margin-left: auto!important;
 }
 
+.nav-container {
+    display: flex;
+    flex-direction:row;
+    gap: 10%;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
 .form-signin {
   width: 50%;
   max-width: 350px;
@@ -23,23 +31,17 @@ body {
 padding: 15px;
 }
 .form-signup {
-  width: 70%;
+  width: 75%;
+  max-width: 350px;
   padding: 15px;
   margin: auto;
 }
 
 .form-signout {
- width: 50%;
- max-width: 350px;
+ width: 70%;
+ max-width: 450px;
 }
 
-/*
-.container-md {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-*/
 
 .separator {
     display: inline-block;
@@ -54,6 +56,10 @@ padding: 15px;
 }
 
 .subscribe {
+  border: solid 1px black;
+}
+
+.border {
   border: solid 1px black;
 }
 
@@ -72,8 +78,6 @@ padding: 15px;
   border-style: inset;
   text-align: center;
   text-decoration: none;
-  /*font-size: small;
-  font-variant-caps: small-caps;*/
 }
 
 #id_followed_user {

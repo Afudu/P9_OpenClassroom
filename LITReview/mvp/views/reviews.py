@@ -36,6 +36,8 @@ class ReviewExistingTicketCreateView(LoginRequiredMixin, FormView):
 
 
 class ReviewAndTicketCreateView(LoginRequiredMixin, CreateView):
+    """	Creates a ticket and a review in one-step process."""
+
     template_name = 'reviews/create_review_and_ticket.html'
 
     def get(self, request, *args, **kwargs):
@@ -50,7 +52,7 @@ class ReviewAndTicketCreateView(LoginRequiredMixin, CreateView):
         ticket_form = TicketForm(request.POST, request.FILES)
         review_form = ReviewForm(request.POST)
         if ticket_form.is_valid() and review_form.is_valid():
-            # review instance
+            # ticket instance
             ticket = ticket_form.save(commit=False)
             ticket.user = request.user
             ticket.save()
@@ -68,6 +70,7 @@ class ReviewAndTicketCreateView(LoginRequiredMixin, CreateView):
 
 
 class ReviewUpdateView(LoginRequiredMixin, UpdateView):
+    """	Updates an existing review."""
     model = Review
     form_class = ReviewForm
     template_name = 'reviews/update_review.html'
@@ -78,6 +81,7 @@ class ReviewUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class ReviewDeleteView(LoginRequiredMixin, DeleteView):
+    """	Deletes an existing review."""
     model = Review
     template_name = 'reviews/delete_review.html'
     success_url = reverse_lazy('posts')

@@ -13,10 +13,10 @@
   {% for post in posts %}
 
     {% if post.content_type == 'TICKET' %}
-      {% include 'tickets/ticket_snippet.html' %}
+      {% include 'feeds/ticket_snippet.html' %}
 
     {% elif post.content_type == 'REVIEW' %}
-      {% include 'reviews/review_snippet.html' %}
+      {% include 'feeds/review_snippet.html' %}
 
     {% endif %}
 

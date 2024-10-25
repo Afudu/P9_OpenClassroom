@@ -5,6 +5,12 @@ from .models import User, Ticket, Review, UserFollows
 
 
 class SignUpForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Username*'})
+        self.fields["password1"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Password*'})
+        self.fields["password2"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Password Confirmation*'})
+
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
@@ -17,7 +23,7 @@ class LoginForm(AuthenticationForm):
 
 
 class CustomAuthenticationForm(AuthenticationForm):
-    """Custom Authentication for customising username and password fields."""
+    """Custom Authentication form."""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["username"].widget.attrs.update({'class': 'form-control', 'placeholder': 'Username*'})
@@ -26,7 +32,6 @@ class CustomAuthenticationForm(AuthenticationForm):
 
 class UserFollowForm(forms.ModelForm):
     """Form for user follows"""
-
     class Meta:
         model = UserFollows
         fields = ['followed_user']
@@ -44,7 +49,6 @@ class TicketForm(forms.ModelForm):
 
 class ReviewForm(forms.ModelForm):
     """Form for creating reviews"""
-
     class Meta:
         model = Review
         fields = ['headline', 'rating', 'body']

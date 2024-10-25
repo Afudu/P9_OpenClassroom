@@ -29,6 +29,7 @@ class UserFollows(models.Model):
 
 
 class Ticket(models.Model):
+    """Model for creating tickets."""
     objects = None
     title = models.CharField(max_length=128, blank=False, default='')
     description = models.TextField(max_length=2048, blank=True)
@@ -41,6 +42,7 @@ class Ticket(models.Model):
 
 
 class Review(models.Model):
+    """Model for creating reviews."""
     objects = None
     ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE)
     rating = models.PositiveSmallIntegerField(

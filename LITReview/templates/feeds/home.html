@@ -3,9 +3,7 @@
 {% block content %}
 
    <p class="mt-5"> Hi {{ user.username|capfirst }}!</p>
- <p>You have successfully logged in.</p>
-
-<p><a href="{% url 'logout' %}">Log Out</a></p>
-
+   <p>You have successfully logged in.</p>
+   <p><a href="{% url 'logout' %}">Log Out</a></p>
 
 {% endblock %}

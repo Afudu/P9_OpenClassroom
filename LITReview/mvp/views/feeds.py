@@ -7,7 +7,7 @@ from mvp.models import Ticket, Review, UserFollows
 
 
 class HomePageView(LoginRequiredMixin, generic.TemplateView):
-    template_name = 'home.html'
+    template_name = 'feeds/home.html'
 
     def get(self, request, **kwargs):
         return redirect('/feed/')
@@ -34,24 +34,24 @@ class FeedPageView(LoginRequiredMixin, generic.TemplateView):
                     current_user_ticket_reviewers_ids.append(review.user.pk)
 
         # # # Queries on tickets :
-        # Tickets of followed users and own tickets.
+        # Own and followed users tickets.
         tickets = Ticket.objects.filter(user_id__in=[current_user.pk] + current_user_following_ids
                                         )
 
         # Annotate as Ticket in the QuerySet: returns queryset of tickets
         tickets = tickets.annotate(content_type=Value('TICKET', CharField()))
 
+        # Own and followed users tickets not reviewed
         tickets_not_reviewed = tickets.exclude(
             id__in=[review.ticket.id for review in Review.objects.filter(ticket__in=tickets)]
         ).annotate(ticket_status=Value('tickets_not_reviewed', CharField()))
 
+        # Own and followed users tickets already reviewed
         tickets_already_reviewed = tickets.filter(
             id__in=[review.ticket.id for review in Review.objects.filter(ticket__in=tickets)]).annotate(
             ticket_status=Value('tickets_already_reviewed', CharField()))
 
-        # # # Queries on reviews :
-        # reviews = (Review.objects.filter(user_id__in=current_user_following_ids +
-        # [current_user.pk] + ids_of_own_ticket_reviewers))
+        # # # Queries on reviews :Reviews of current user, their following list and reviewers of own tickets.
         reviews = (Review.objects.filter(user_id__in=[current_user.pk]) |
                    Review.objects.filter(user_id__in=current_user_following_ids) |
                    Review.objects.filter(user_id__in=current_user_ticket_reviewers_ids)
