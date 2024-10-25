@@ -14,16 +14,15 @@ The app is created as an MVP (minimum viable product) using the Django framework
 The focus will therefore be more on the backend. 
 The frontend will be a clean and minimal UI matching the wireframes provided and allows users to:
 
-  -	Sign up and log in
-  -	Create new tickets requesting a review of a book/article
-  -	Create reviews in response to created tickets
-  -	Create a ticket then a review as part of one-step process
-  -	View, edit, and delete their own tickets and reviews
+  -	Sign up and log in.
+  -	Create new tickets requesting a review of a book/article.
+  -	Create reviews in response to created tickets.
+  -	Create a ticket then a review as part of one-step process.
+  -	View, edit, and delete their own tickets and reviews.
   - View a feed - with the latest on top - containing:
-        - their own tickets and reviews,
-        - any reviews in response to their own tickets,
-        - the tickets and reviews from users that they follow.
-  -	Follow other users by entering their username
+        their own tickets and reviews, any reviews in response to their own tickets, 
+        the tickets and reviews from users that they follow.
+  -	Follow other users by entering their username.
   -	View who they follow and unfollow whoever they want. 
 
 This project uses HTML, CSS, Javascript and Python languages.
