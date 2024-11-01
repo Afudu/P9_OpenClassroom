@@ -41,7 +41,7 @@ The following commands rely on the knowledge of how to use the terminal (Unix, m
 
   * Unix/macOS/Windows
        ```bash
-       git clone https://github.com/Afudu/P11_OpenClassroom.git
+       git clone https://github.com/Afudu/P9_OpenClassroom.git
        ```
 
 **2 - Move to the folder**
