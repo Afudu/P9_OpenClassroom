@@ -13,7 +13,7 @@ __pycache__/
 OLD_Data/
 Tests/
 Notes/
-LITReview_mvp
+LITReview_mvp/
 # Translations
 *.mo
 *.pot
