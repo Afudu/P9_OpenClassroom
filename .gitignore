@@ -10,10 +10,10 @@ __pycache__/
 #*.jpg
 #*.jpeg
 *.zip
-OLD_Data/
 Tests/
 Notes/
 LITReview_mvp/
+
 # Translations
 *.mo
 *.pot
