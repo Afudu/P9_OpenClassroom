@@ -90,7 +90,7 @@ The following commands rely on the knowledge of how to use the terminal (Unix, m
   * Unix/macOS/Windows
 
       ```bash
-     pip install --upgrade pip
+     py -m pip install --upgrade pip
      ```
 
 **6 - Install all dependencies**
