@@ -18,11 +18,11 @@ the wireframes provided and allowing the users to:
   -	Create tickets requesting a review of a book/article;
   -	Create reviews in response to created tickets;
   -	Create a ticket then a review as part of one-step process;
-  -	View, edit, and delete their own tickets and reviews;
   - View an ordered feed containing:
     - their own tickets, reviews, and any review in response to their own tickets; 
     - the tickets and reviews from users that they follow;
-  -	Follow other users by entering their username;
+  -	View, edit, and delete their own tickets and reviews;
+  - Follow other users by entering their username;
   -	View who they follow and unfollow whoever they want. 
 
 This project uses HTML, CSS, Javascript and Python languages.
