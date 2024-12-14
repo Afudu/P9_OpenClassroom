@@ -1,144 +1,128 @@
-## OpenClassrooms - Python Developer Path
+# Develop a Web Application Using Django
 
-**Project 9:** Develop a Web Application Using Django
+**OpenClassrooms - Python Developer Path:** Project 9
 
 **Student:** Abdoul Baki Seydou
 
 **Date:** 13/05/2023
 
-## Abstract
-This project consists of developing for LITReview, an up-and-coming startup, a secure web app that will allow users 
-to request and publish reviews of books and articles.
+## Table of Contents
+1. [Summary](#summary)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Project Tasks](#project-tasks)
+5. [Local Development](#local-development)
+   - [Prerequisites](#prerequisites)
+   - [Setup on macOS/Linux](#setup-on-macoslinux)
+   - [Setup on Windows](#setup-on-windows)
+   - [Running the Application](#running-the-application)
+   - [Admin Panel](#admin-panel)
+
+## Summary
+This project consists of developing for **LITReview**, an up-and-coming startup, 
+a secure web app that will allow users to request and publish reviews of books and articles.
 
 The app needs to be created as an MVP (minimum viable product) using the Django framework. 
 The focus will therefore be more on the backend, with the frontend being a clean and minimal UI matching 
-the wireframes provided and allowing the users to:
+the wireframes provided.
 
-  -	Sign up and log in;
-  -	Create tickets requesting a review of a book/article;
-  -	Create reviews in response to created tickets;
-  -	Create a ticket then a review as part of one-step process;
-  - View an ordered feed containing:
-    - their own tickets, reviews, and any review in response to their own tickets; 
-    - the tickets and reviews from users that they follow;
-  -	View, edit, and delete their own tickets and reviews;
-  - Follow other users by entering their username;
-  -	View who they follow and unfollow whoever they want. 
+## Features
+1. **Sign up and Log in:** to the application.
+2. **Create a Ticket:** To request a review of a book/article.
+3. **Create Review:** In response to created tickets.
+4. **Create a Ticket and Review:** As part of one-step process.
+5. **View Feed:** Of own tickets, reviews, and responses to own tickets.
+6. **Edit Own Posts:** View, edit, update or delete own tickets and reviews.
+7. **Follow:** Other users by entering their username.
+8. **Unfollow:** Whoever they want.
+9. **Logout:** They can log out of the system.
 
-This project uses HTML, CSS, Javascript and Python languages.
+## Technologies Used
+- **Programming Language:** Python, HTML, CSS, Javascript.  
+- **Framework:** Django
+- **Database:** SQLite
 
-## Requirement
+## Project Tasks
+1. Create Django models in Database Schema.
+2. Create Forms for data validation and transformation.
+3. Create Views and Templates to handle API logic.
+4. Define URL routes for the API.
 
-Latest version of Python must be installed.
+## Local Development
 
-You can download the latest version for your system from : https://www.python.org/downloads/
+### Prerequisites
+- PostgreSQL installed.
+- Python 3.6 or higher.
 
-## Installation
+### Setup on macOS/Linux
 
-The following commands rely on the knowledge of how to use the terminal (Unix, macOS) or the command line (Windows).
+1. **Clone the Repository**
+   ```bash
+   cd /path/to/put/project/in
+   git clone https://github.com/Afudu/P9_OpenClassroom.git
 
-**1 - Get the code**
+2. **Move to the folder**
+   ```bash
+   cd P9_OpenClassroom
 
-  * Unix/macOS/Windows
+3. **Set Up Virtual Environment**
+   ```bash
+   python -m venv venv
+   
+4. **Activate Environment**
+   ```bash
+   source venv/bin/activate 
 
-       ```bash
-       git clone https://github.com/Afudu/P9_OpenClassroom.git
-       ```
+5. **Securely upgrade pip**
+   ```bash
+   python -m pip install --upgrade pip 
 
-**2 - Move to the folder**
+6. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   
+7. **To deactivate Environment**
+   ```bash
+   deactivate
 
-  * Unix/macOS/Windows
+### Setup on Windows
 
-       ```bash
-       cd P9_OpenClassroom
-       ```  
+1. Follow the steps above.
 
-**3 - Create a virtual environment**
+2. To activate the environment:
+   ```bash
+   .\venv\Scripts\Activate
 
-  * Unix/macOS
+### Running the application
 
-    ```bash
-    python3 -m venv pythonenv
-     ```
-  * Windows
+1. **Start the server**
+   ```bash
+   cd LITReview; python manage.py runserver
+   
+2. **Access in the browser**
+- To test the application, navigate to:
+  ```bash
+  http://localhost:8000/
 
-    ```bash
-    py -m venv pythonenv
-    ```
+### Admin Panel
+1. Create a superuser account
+   ```bash
+   python manage.py createsuperuser
+2. Navigate to:
+   ```bash
+    http://localhost:8000/admin
+3. Use the superuser user created above to log in.
+
+### Linting
+
+- **Run Linting**
+  ```bash
+  flake8
   
-  * Note: you can create the virtual environment in another folder, 
-   then move to that folder to run the command above.
-  * Example: in the above command, our virtual environment created is called pythonenv. 
-    You can give a different name.
+## Screenshots
 
-**4 - Activate the virtual environment created**
+![Login Page](screenshots/login_page.png "Login Page")
 
-  * Unix/macOS
+![Feed Page](screenshots/feed_page.png "Feed Page")
 
-    ```bash
-    source pythonenv/bin/activate
-    ```
-
-  * Windows
-
-    ```bash
-    pythonenv\Scripts\activate
-    ```
-
-**5 - Securely upgrade pip**
-
-  * Unix/macOS/Windows
-
-      ```bash
-     py -m pip install --upgrade pip
-     ```
-
-**6 - Install all dependencies**
-
-  * Unix/macOS/Windows
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-    
-## Running the application
-
-**Move to the folder**
-
-  * Unix/macOS/Windows
-
-      ```bash
-      cd LITReview
-      ```
-
-**Start the server**
-
-  * Unix/macOS/Windows
-
-    ```bash
-    python manage.py runserver
-    ```
-
-## Testing the application
-After the server has started, to access the website, navigate to the url: http://127.0.0.1:8000/
-
-For testing the website and its functionalities as detailed in the project specification documents, 
-there are three example user accounts (John, Marga and Tibou) with posts.
-
-The password for each user account is: Password.01
-
-Log in with each account to test the functionalities.
-
-## PEP 8 adherence
-The folder ```flake_report``` in the repository contains an HTML report generated by ```flake8-html``` which 
-displays no errors.
-
-A new report can be generated by running the following command:
-
-* Unix/macOS/Windows
-
-    ```bash 
-    flake8 
-    ```
-
-The file ```setup.cfg``` in the root of the repository contains the settings used to generate the report.
+![Following Page](screenshots/following_page.png "Following Page")
