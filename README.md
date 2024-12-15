@@ -17,6 +17,8 @@
    - [Setup on Windows](#setup-on-windows)
    - [Running the Application](#running-the-application)
    - [Admin Panel](#admin-panel)
+   - [Linting](#linting)
+   - [screenshots](#screenshots)
 
 ## Summary
 This project consists of developing for **LITReview**, an up-and-coming startup, 
