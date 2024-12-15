@@ -45,7 +45,7 @@ the wireframes provided.
 - **Database:** SQLite
 
 ## Project Tasks
-1. Create Django models in Database Schema.
+1. Complete Django models following Database Schema.
 2. Create Forms for data validation and transformation.
 3. Create Views and Templates to handle API logic.
 4. Define URL routes for the API.
