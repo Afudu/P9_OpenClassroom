@@ -22,22 +22,21 @@
 
 ## Summary
 This project consists of developing for **LITReview**, an up-and-coming startup, 
-a secure web app that will allow users to request and publish reviews of books and articles.
+a secure web application that will allow users to request and publish reviews of books and articles.
 
-The app needs to be created as an MVP (minimum viable product) using the Django framework. 
-The focus will therefore be more on the backend, with the frontend being a clean and minimal UI matching 
-the wireframes provided.
+The application is created as an MVP (minimum viable product) focusing is on the backend, 
+with the frontend being a clean and minimal UI matching the wireframes provided.
 
 ## Features
-1. **Sign up and Log in:** to the application.
-2. **Create a Ticket:** To request a review of a book/article.
-3. **Create Review:** In response to created tickets.
-4. **Create a Ticket and Review:** As part of one-step process.
-5. **View Feed:** Of own tickets, reviews, and responses to own tickets.
-6. **Edit Own Posts:** View, edit, update or delete own tickets and reviews.
-7. **Follow:** Other users by entering their username.
-8. **Unfollow:** Whoever they want.
-9. **Logout:** They can log out of the system.
+the application guarantees the following functionalities:
+1. **Sign up and Log in:** Users can register log into to the application.
+2. **Create a Ticket:** They can create tickets to request a review.
+3. **Create Review:** They can add a review to created tickets.
+4. **Create Ticket and Review:** They can create a ticket and review in one-step process.
+5. **Feed:** They can view own tickets, reviews, and responses to own tickets.
+6. **Posts:** They can view, edit, update or delete own tickets and reviews.
+7. **Follow and Unfollow:** They can follow other users by entering their username, and unfollow whoever they want.
+8. **Logout:** They can log out of the system.
 
 ## Technologies Used
 - **Programming Language:** Python, HTML, CSS, Javascript.  
@@ -45,9 +44,9 @@ the wireframes provided.
 - **Database:** SQLite
 
 ## Project Tasks
-1. Complete Django models following Database Schema.
-2. Create Forms for data validation and transformation.
-3. Create Views and Templates to handle API logic.
+1. Complete the Django models following Database Schema.
+2. Create the Forms for data validation and transformation.
+3. Create the Views and Templates to handle API logic.
 4. Define URL routes for the API.
 
 ## Local Development
@@ -116,8 +115,9 @@ the wireframes provided.
 3. Use the superuser user created above to log in.
 
 ### Linting
+The codebase is fully linted and free of errors.
 
-- **Run Linting**
+- **To Run Linting**
   ```bash
   flake8
   
