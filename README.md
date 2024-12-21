@@ -121,7 +121,7 @@ The codebase is fully linted and free of errors.
   ```bash
   flake8
   
-## Screenshots
+### Screenshots
 
 ![Login Page](screenshots/login_page.png "Login Page")
 
